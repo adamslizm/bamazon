@@ -55,16 +55,17 @@ function pickProduct() {
         name: 'item_id',
         message: 'Enter the item id of the product you would like to purchase.',
         type: 'input',
+        choices: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"],
 
 
-        validate: function(item_id) {
-            if ((isNaN(item_id) === false) && (item_id === item_id)) {
+        validate: function(value) {
+            if ((isNaN(value) === false) && (value === choices)) {
                 return true;
                 pickQuantity();
 
-            // } else {
-            //     console.log('\nPlease enter a valid ID.');
-                // return false;
+            } else {
+                console.log('\nPlease enter a valid ID.');
+                return false;
             }
         }
     }, {

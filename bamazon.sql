@@ -1,18 +1,19 @@
+
+
 DROP DATABASE IF EXISTS bamazon_DB;
 CREATE database bamazon_DB;
 
-USE bamazon_DB;
+use bamazon_DB;
 
-CREATE TABLE products (
-  id INT NOT NULL AUTO_INCREMENT,
-  item_id VARCHAR(100) NOT NULL,
-  product_name VARCHAR(100) NOT NULL,
-  department_name VARCHAR(100) NOT NULL,
-  price INT(255),
-  stock_quantity INT(255),
-  PRIMARY KEY (id)
+CREATE TABLE products(
+item_id VARCHAR(100) NOT NULL,
+product_name VARCHAR(100) NOT NULL,
+department_name VARCHAR(100),
+price integer(255),
+stock_quantity integer(255)
 );
 
+use bamazon_DB;
 INSERT INTO products(item_id, product_name, department_name, price, stock_quantity)
 VALUES ("j", "cheese", "groceries", 12, 67)
 
@@ -44,4 +45,3 @@ VALUES ("b", "TV", "electronics", 200, 20)
 
 INSERT INTO products(item_id, product_name, department_name, price, stock_quantity)
 VALUES ("a", "iPhone", "electronics", 100, 25)
-
