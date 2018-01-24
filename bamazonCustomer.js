@@ -1,6 +1,7 @@
 // Require NPM packages
 var mysql = require('mysql');
 var inquirer = require('inquirer');
+// var index = require('index.sql');
 
 // Setup connection to SQL server
 var connection = mysql.createConnection({
@@ -27,30 +28,48 @@ function start() {
     })
     .then(function(answer) {
       
-      if (answer.buyOrNo.toUpperCase() === "Yes") {
+      if (answer.buyOrNo.toUpperCase() === "YES") {
         pickProduct();
       }
-      else {
-        console.log("Have a nice day!");
-      }
+      // else {
+      //   console.log("Have a nice day!");
+      // }
     });
 }
+
+//list products available
+function list() {
+    return inquirer.prompt({
+        type: 'list',
+        name: 'bamazon_DB'
+    })
+}
+// connection.query(
+//     "List of products",
+//     {
+
+//     }
 //pick item id
 function pickProduct() {
     return inquirer.prompt({
-        name: 'product_name',
-        message: 'Enter the item number of the product you would like to purchase.',
+        name: 'item_id',
+        message: 'Enter the item id of the product you would like to purchase.',
         type: 'input',
-        validate: function(value) {
-            if ((isNaN(value) === false) && (value <= numberOfProductTypes)) {
+
+
+        validate: function(item_id) {
+            if ((isNaN(item_id) === false) && (item_id === item_id)) {
                 return true;
-            } else {
-                console.log('\nPlease enter a valid ID.');
-                return false;
+                pickQuantity();
+
+            // } else {
+            //     console.log('\nPlease enter a valid ID.');
+                // return false;
             }
         }
     }, {
         //pick the quantity of that item
+        // function pickQuantity() {
         name: 'quantity',
         message: 'How many would you like to buy?',
         type: 'input',
@@ -63,6 +82,7 @@ function pickProduct() {
             }
 
             //change the number of stock in inventory
+            //show how much the customer owes
         }
         });
 };
