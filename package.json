@@ -1,0 +1,22 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "bamazon selling site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamslizm/bamazon.git"
+  },
+  "author": "Elizabeth Adams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adamslizm/bamazon/issues"
+  },
+  "homepage": "https://github.com/adamslizm/bamazon#readme",
+  "dependencies": {
+    "inquirer": "^5.0.1"
+  }
+}
